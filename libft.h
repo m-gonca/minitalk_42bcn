@@ -16,6 +16,7 @@
 #	include <stdlib.h>
 #	include <stdio.h>
 #	include <stdarg.h>
+#	include <signal.h>
 #	include "libft.h"
 
 typedef struct s_list
