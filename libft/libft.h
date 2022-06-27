@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 17:41:24 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/25 17:41:24 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:02:40 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #	include <stdio.h>
 #	include <stdarg.h>
 #	include <signal.h>
-#	include "libft.h"
 
 typedef struct s_list
 {

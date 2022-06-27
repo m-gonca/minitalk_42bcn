@@ -6,11 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/27 18:43:05 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:51:49 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/libft.h"
 
 /*	1 -> si no hay pid o str, mensaje error
 	2 -> convertir cada char del string, en numero binario

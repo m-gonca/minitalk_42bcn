@@ -6,10 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:36 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/27 18:50:51 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:59:44 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 
 void show_pid()
 {
@@ -62,7 +63,6 @@ void ft_server(void)
 		ft_printf("Waiting for signals\n");
 		sleep(2);
 	}
-	return (0);
 }
 
 int main()
