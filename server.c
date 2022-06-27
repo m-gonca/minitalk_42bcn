@@ -6,12 +6,12 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:36 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/25 16:29:36 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 18:50:51 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-int show_pid();
+
+void show_pid()
 {
 	pid_t	pid;
 
@@ -21,32 +21,45 @@ int show_pid();
 
 void ft_answer(int sign)
 {
-	unsigned char	byte;
-
-	byte = 0;
-	if(sign = 1)
+	static unsigned char	byte = 0;
+	static unsigned char	shift = 1 << 6;
+	static int 				counter = 6;
+	
+	if (counter > 0)
 	{
-		byte = byte| 1;
+		if (sign = 1)
+		{
+			byte = shift ^ byte;
+			shift >> counter;
+		}
+		if (sign = 0)
+			shift >> counter;
 	}
-
-	if(sign = 0)
+	counter--;
+	if (counter == 0)
+	{
+		write(1, byte, 1);
+		counter = 6;
+		byte = 0;
+		shift << 6;
+	}
 }
 
 void ft_server(void)
 {
 	if (signal(SIGUSR1,  ft_answer) == SIG_ERR)
     {
-      ft_printf("Error.\n");
+      ft_printf("Error\n");
       exit(1);
     }
 	if (signal(SIGUSR2, ft_answer) == SIG_ERR)
     {
-      ft_printf("Error.\n");
+      ft_printf("Error\n");
       exit(1);
     }
 	while (1)
 	{
-		ft_printf("Esperando señales");
+		ft_printf("Waiting for signals\n");
 		sleep(2);
 	}
 	return (0);
