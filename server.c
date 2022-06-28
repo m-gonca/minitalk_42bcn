@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:36 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/27 18:59:44 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:28:18 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,21 @@ void ft_answer(int sign)
 	
 	if (counter > 0)
 	{
-		if (sign = 1)
+		if (sign == 1)
 		{
 			byte = shift ^ byte;
-			shift >> counter;
+			shift = shift >> counter;
 		}
-		if (sign = 0)
-			shift >> counter;
+		if (sign == 0)
+			shift = shift >> counter;
 	}
 	counter--;
 	if (counter == 0)
 	{
-		write(1, byte, 1);
+		write(1, &byte, 1);
 		counter = 6;
 		byte = 0;
-		shift << 6;
+		shift = shift << 6;
 	}
 }
 

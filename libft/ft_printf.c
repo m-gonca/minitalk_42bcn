@@ -6,11 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:05:01 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/05/19 13:16:11 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:16:54 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_printf(const char *s, ...)
 {

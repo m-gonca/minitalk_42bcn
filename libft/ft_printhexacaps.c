@@ -6,11 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 17:32:17 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/05/19 13:08:42 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:17:05 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_printhexacaps(unsigned int n)
 {

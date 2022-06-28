@@ -6,11 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:27:23 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/05/19 13:09:36 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:17:16 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 /*
 	1-> habra que dividir el numero por la base, hasta que no se pueda dividir 
 	mas, en cuyo caso el resto de la division anterior sera el cociente de la 

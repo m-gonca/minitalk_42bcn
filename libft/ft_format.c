@@ -6,11 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 20:22:07 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/05/20 20:10:10 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:19:06 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 /*	1 -> si es una c o lo que sea, quiero que ejecutes la funcion de conversion
 		 de cada tipo con el valor de la variable de la lista que toque y 
 		 devuelvas la cantidad de char imprimidos

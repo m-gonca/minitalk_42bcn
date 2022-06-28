@@ -6,11 +6,11 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 21:32:05 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/05/19 13:09:21 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:17:12 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_find_size(int n)
 {

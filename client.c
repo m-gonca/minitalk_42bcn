@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/27 18:51:49 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/28 18:04:13 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_sendsign(int pid, int i)
 {
 	if (i == 1)
 	{
-		if(kill(SIGUSR1, pid) == -1);
+		if(kill(SIGUSR1, pid) == -1)
 		{
 			ft_printf("Error\n");
 			exit(1);
@@ -28,12 +28,13 @@ int	ft_sendsign(int pid, int i)
 	}
 	else if (i == 0)
 	{
-		if(kill(SIGUSR1, pid) == -1);
+		if(kill(SIGUSR1, pid) == -1)
 		{
 			ft_printf("Error\n");
 			exit(1);
 		}
 	}
+	return (0);
 }
 
 int	ft_char2bin(int pid, unsigned char byte)
@@ -43,37 +44,45 @@ int	ft_char2bin(int pid, unsigned char byte)
 
 	while(counter > 0)
 	{
-		if (shift & byte == 1)
+		if ((shift & byte) == 1)
 			ft_sendsign(pid, 1);
 		else
 			ft_sendsign(pid, 0);
-		shift >> 1;
+		shift = shift >> 1;
 		counter--;
 	}
 	return (0);
 }
-char    *ft_client(int  pid, char *str)
+char    ft_client(int  pid, char *str_to_send)
 {
-	if (!pid || !str)
+	unsigned char	char_to_send;
+	
+	if (!pid || !str_to_send)
 	{
 		ft_printf("NULL pid or NULL str\n");
 		exit(1);
 	}
-	while (*str)
+	while (*str_to_send)
 	{
-		ft_char2bin(str);
-		str++;
+		char_to_send = *str_to_send;
+		ft_char2bin(pid, char_to_send);
+		str_to_send++;
 	}
 	return(0);
 }
 
-int main(int argc,char *argv)
+int main(int argc, char **argv)
 {
+	int		pid;
+	char	*str_to_send;
+	
 	if (argc != 3)
 	{
 		ft_printf("Missing arguments\n");
 		exit(1);
 	}
-	ft_client(argv[1], argv[2]);
+	pid = ft_atoi(argv[1]);
+	str_to_send = argv[2];
+	ft_client( pid, str_to_send);
 	return(0);
 }

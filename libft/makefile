@@ -6,7 +6,7 @@
 #    By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 17:13:05 by mogonzal          #+#    #+#              #
-#    Updated: 2022/06/27 19:09:50 by mogonzal         ###   ########.fr        #
+#    Updated: 2022/06/28 15:22:02 by mogonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,13 +67,12 @@ SRCS =		ft_bzero.c \
 			ft_printhexa.c \
 			ft_printhexacaps.c
 
-OBJ =		$(SRCS:.c=.o)
+OBJS =		$(SRCS:.c=.o)
 
 CC =		gcc -c
 
 %.o:%.c		$(HEADER)
 			$(CC) $(CFLAGS) -o $@ $<
-			@ECHO "Compiling... $^"
 
 CFLAGS =	-Wall -Wextra -Werror
 
@@ -85,7 +84,8 @@ $(NAME):	$(OBJS) $(HEADER)
 			ar -rcs $(NAME) $(OBJS)
 			ranlib $(NAME)
 
-clean:		$(RM) $(NAME) 
+clean:		
+			$(RM) $(OBJS) 
 
 fclean:		clean
 			$(RM) $(NAME) 

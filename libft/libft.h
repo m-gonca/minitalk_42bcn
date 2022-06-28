@@ -6,12 +6,12 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 17:41:24 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/27 19:02:40 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/27 19:15:29 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT.H
-#	define LIBFT.H
+#ifndef LIBFT_H
+#	define LIBFT_H
 #	include <unistd.h>
 #	include <stdlib.h>
 #	include <stdio.h>
