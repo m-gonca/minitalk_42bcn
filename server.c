@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:36 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/28 18:28:18 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:24:57 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void ft_answer(int sign)
 	
 	if (counter > 0)
 	{
-		if (sign == 1)
+		if (sign == 30)
 		{
 			byte = shift ^ byte;
 			shift = shift >> counter;
 		}
-		if (sign == 0)
+		if (sign == 31)
 			shift = shift >> counter;
 	}
 	counter--;
@@ -48,6 +48,7 @@ void ft_answer(int sign)
 
 void ft_server(void)
 {
+	ft_printf("he entrado en mandar aqui\n");
 	if (signal(SIGUSR1,  ft_answer) == SIG_ERR)
     {
       ft_printf("Error\n");

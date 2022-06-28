@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/28 18:04:13 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:18:32 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,19 @@ int	ft_sendsign(int pid, int i)
 {
 	if (i == 1)
 	{
-		if(kill(SIGUSR1, pid) == -1)
+		ft_printf("he entrado en mandar senal 1\n");
+		if(kill(SIGUSR1, pid) == 1)
 		{
-			ft_printf("Error\n");
+			ft_printf("Client Error1\n");
 			exit(1);
 		}
 	}
 	else if (i == 0)
 	{
-		if(kill(SIGUSR1, pid) == -1)
+		ft_printf("he entrado en mandar senal 0\n");
+		if(kill(SIGUSR2, pid) == 1)
 		{
-			ft_printf("Error\n");
+			ft_printf("Client Error2\n");
 			exit(1);
 		}
 	}
@@ -44,10 +46,16 @@ int	ft_char2bin(int pid, unsigned char byte)
 
 	while(counter > 0)
 	{
-		if ((shift & byte) == 1)
-			ft_sendsign(pid, 1);
+		if ((shift & byte) == shift)
+		{
+			if (ft_sendsign(pid, 1) == 1)
+				exit (1);
+		}
 		else
-			ft_sendsign(pid, 0);
+		{
+			if (ft_sendsign(pid, 0) == 1)
+				exit (1);
+		}
 		shift = shift >> 1;
 		counter--;
 	}

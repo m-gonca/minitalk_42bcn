@@ -6,7 +6,7 @@
 #    By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 19:19:58 by mogonzal          #+#    #+#              #
-#    Updated: 2022/06/28 18:20:01 by mogonzal         ###   ########.fr        #
+#    Updated: 2022/06/28 18:47:58 by mogonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ HEADER	=	libft/libft.h
 
 #___________________________________________________________#
 
-all:		server client
+all:		libft server client
 
 libft:		
 			$(MAKE) -C ./libft all
