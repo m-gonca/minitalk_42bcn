@@ -6,7 +6,7 @@
 #    By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/25 17:13:05 by mogonzal          #+#    #+#              #
-#    Updated: 2022/06/28 15:22:02 by mogonzal         ###   ########.fr        #
+#    Updated: 2022/06/29 19:27:29 by mogonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ CC =		gcc -c
 
 %.o:%.c		$(HEADER)
 			$(CC) $(CFLAGS) -o $@ $<
+			@echo "Compiling libft ..."
 
 CFLAGS =	-Wall -Wextra -Werror
 
