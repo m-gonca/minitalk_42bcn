@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/29 19:53:30 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/29 20:06:39 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int	ft_sendsign(int pid, int i)
 {
 	if (i == 1)
 	{
-		//ft_printf("he entrado en mandar senal 1\n");
-		if(kill(pid, SIGUSR1) == 1)
+		if (kill(pid, SIGUSR1) == 1)
 		{
 			ft_printf("Client Error1\n");
 			exit(1);
@@ -29,8 +28,7 @@ int	ft_sendsign(int pid, int i)
 	}
 	else if (i == 0)
 	{
-		//ft_printf("he entrado en mandar senal 0\n");
-		if(kill(pid, SIGUSR2) == 1)
+		if (kill(pid, SIGUSR2) == 1)
 		{
 			ft_printf("Client Error2\n");
 			exit(1);
@@ -41,9 +39,11 @@ int	ft_sendsign(int pid, int i)
 
 int	ft_char2bin(int pid, unsigned char byte)
 {
-	unsigned char shift = 1 << 7;
-	int		counter = 7;
-	
+	unsigned char	shift;
+	int				counter;
+
+	counter = 7;
+	shift = 1 << 7;
 	while (counter >= 0)
 	{
 		if ((shift & byte) == shift)
@@ -60,14 +60,13 @@ int	ft_char2bin(int pid, unsigned char byte)
 		counter--;
 		usleep(100);
 	}
-
 	return (0);
 }
 
-char    ft_client(int  pid, char *str_to_send)
+char	ft_client(int pid, char *str_to_send)
 {
 	unsigned char	char_to_send;
-	
+
 	if (!pid || !str_to_send)
 	{
 		ft_printf("NULL pid or NULL str\n");
@@ -79,14 +78,14 @@ char    ft_client(int  pid, char *str_to_send)
 		ft_char2bin(pid, char_to_send);
 		str_to_send++;
 	}
-	return(0);
+	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int		pid;
 	char	*str_to_send;
-	
+
 	if (argc != 3)
 	{
 		ft_printf("Missing arguments\n");
@@ -95,5 +94,5 @@ int main(int argc, char **argv)
 	pid = ft_atoi(argv[1]);
 	str_to_send = argv[2];
 	ft_client(pid, str_to_send);
-	return(0);
+	return (0);
 }

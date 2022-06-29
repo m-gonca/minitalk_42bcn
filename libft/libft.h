@@ -6,17 +6,17 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 17:41:24 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/27 19:15:29 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/29 20:03:33 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#	define LIBFT_H
-#	include <unistd.h>
-#	include <stdlib.h>
-#	include <stdio.h>
-#	include <stdarg.h>
-#	include <signal.h>
+# define LIBFT_H
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <stdarg.h>
+# include <signal.h>
 
 typedef struct s_list
 {
