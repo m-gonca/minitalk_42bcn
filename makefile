@@ -6,7 +6,7 @@
 #    By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/27 19:19:58 by mogonzal          #+#    #+#              #
-#    Updated: 2022/06/29 19:27:14 by mogonzal         ###   ########.fr        #
+#    Updated: 2022/06/29 20:14:53 by mogonzal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,23 +35,25 @@ HEADER	=	libft/libft.h
 all:		libft server client
 
 libft:		
-			$(MAKE) -C ./libft all
+			@$(MAKE) -C ./libft all
 			
 server:		$(OBJ1) $(LIBFT)
-			$(CC) $(CFLAGS) $(OBJ1) $(LIBFT) -o server
+			@$(CC) $(CFLAGS) $(OBJ1) $(LIBFT) -o server
 			@echo "Compiling server"
 
 client:		$(OBJ2) $(LIBFT)
-			$(CC) $(CFLAGS) $(OBJ2) $(LIBFT) -o client
+			@$(CC) $(CFLAGS) $(OBJ2) $(LIBFT) -o client
 			@echo "Compiling client"
 
 clean:		
 			$(RM) $(OBJ1) $(OBJ2)
 			$(MAKE) -C ./libft clean
+			@echo "Clean done"
 
 fclean:		clean
 			$(RM) server client
 			$(MAKE) -C ./libft fclean
+			@echo "Fclean done"
 
 re:			fclean all
 			
