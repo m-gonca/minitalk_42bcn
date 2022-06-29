@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/29 19:22:21 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/29 19:53:30 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_char2bin(int pid, unsigned char byte)
 		}
 		shift = shift >> 1;
 		counter--;
-		usleep(1250);
+		usleep(100);
 	}
 
 	return (0);
