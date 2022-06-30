@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/30 17:57:30 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/30 19:05:35 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 
-/*	1 -> si no hay pid o str, mensaje error
-	2 -> convertir cada char del string, en numero binario
-	3 -> enviar una señal por cada 0 y otra por cada 1
-*/	
-static int	ft_sendsign(int pid, int i)
+static void	checker(int sign)
 {
-	if (i == 1)
-	{
-		if (kill(pid, SIGUSR1) == 1)
-		{
-			ft_printf("Client Error1\n");
-			exit(1);
-		}
-	}
-	else if (i == 0)
-	{
-		if (kill(pid, SIGUSR2) == 1)
-		{
-			ft_printf("Client Error2\n");
-			exit(1);
-		}
-	}
-	return (0);
+	if (sign != SIGUSR1)
+		exit(1);
+	ft_printf("he confirmado un bit\n");
 }
 
 static void	ft_char2bin(int pid, unsigned char byte)
@@ -48,14 +30,15 @@ static void	ft_char2bin(int pid, unsigned char byte)
 	{
 		if ((shift & byte) == shift)
 		{
-			if (ft_sendsign(pid, 1) == 1)
-				exit (1);
+			if (kill(pid, SIGUSR1) == 1)
+				exit(1);
 		}
-		else
+		else if (!((shift & byte) == shift))
 		{
-			if (ft_sendsign(pid, 0) == 1)
-				exit (1);
+			if (kill(pid, SIGUSR2) == 1)
+				exit(1);
 		}
+		signal(SIGUSR1, &checker);
 		shift = shift >> 1;
 		counter--;
 		usleep(100);
