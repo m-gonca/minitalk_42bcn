@@ -6,7 +6,7 @@
 /*   By: mogonzal <mogonzal@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:29:25 by mogonzal          #+#    #+#             */
-/*   Updated: 2022/06/29 20:15:51 by mogonzal         ###   ########.fr       */
+/*   Updated: 2022/06/30 12:39:11 by mogonzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	ft_client(int pid, char *str_to_send)
 {
 	unsigned char	char_to_send;
 
-	if (!pid || !str_to_send)
+	if (!pid || !*str_to_send)
 	{
 		ft_printf("NULL pid or NULL str\n");
 		exit(1);
@@ -88,10 +88,15 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_printf("Missing arguments\n");
+		ft_printf("Wrong number of arguments\n");
 		exit(1);
 	}
 	pid = ft_atoi(argv[1]);
+	if (pid == -1)
+	{
+		ft_printf("Wrong pid\n");
+		exit(1);
+	}
 	str_to_send = argv[2];
 	ft_client(pid, str_to_send);
 	return (0);
